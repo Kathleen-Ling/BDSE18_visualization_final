@@ -19,3 +19,9 @@ a:visited {
     text-decoration: none;
 }
  /* navigation bar end */
+
+ @media only screen and (max-width: 600px){
+    li {
+        display: block;           
+    }
+ }
