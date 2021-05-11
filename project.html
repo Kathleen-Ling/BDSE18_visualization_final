@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/st1.css" />
+    <link rel="stylesheet" href="style/sidepages.css">
+    <style>
+        .content {
+            /* width:95%; */
+            /* float: right; */
+            height: 1500px;
+            background-color: #ffffff;
+        }
+
+        button {
+            background-color: Transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+            /* Hidden by default */
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            /* Make sure it does not overlap */
+            z-index: 99;
+            
+        }
+
+        #sidenav {
+            /* smartphone */
+            /* margin-top: 5px;
+            margin-bottom:0px ; 
+            background-color: #ffffff; */
+
+            position: fixed;
+            z-index: 99;
+            /* margin-left: 20px; */
+            /* background-color: grey; */
+            height: 100%;
+            /* Full-height: remove this if you want "auto" height */
+            width: 160px;
+            /* Set the width of the sidebar */
+        }
+
+        #sidenav li {
+            display: block;
+            text-align: left;
+            padding: 6px;
+        }
+
+        /* .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li class='active'>Project</li>
+        <li><a href='about.html'>About</a></li>
+        <li><a href="contact.html">Contacts</a></li>
+    </ul>
+
+    <ul id='sidenav'>
+        <li><a href="#分析">分析</a></li>
+        <li><a href="#視覺化圖">視覺化圖</a></li>
+        <li><a href="#技術">技術</a></li>
+    </ul>
+    <div class="content">
+        <button onclick="topFunction()" id="topBtn" title="Go to top"><img src='image/top.png'></button>
+
+    </div>
+    <script src="JS/topBtn.js"></script>
+    <!-- <script >
+        //  sideNav start
+
+        // Get the navbar
+        sideNav = document.getElementById("sidenav");
+        sticky = sideNav.offsetTop;
+
+        // When the user scrolls down 20px from the top of the document, show the button and place sideNav on top
+        window.onscroll = function () { scroll() };
+
+        function scroll() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                sideNav.classList.add("sticky")
+            } else {
+                sideNav.classList.remove("sticky");
+            }
+        }
+        // sideNav end
+
+    </script> -->
+</body>
+
+</html>
