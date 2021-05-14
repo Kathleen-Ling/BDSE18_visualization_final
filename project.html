@@ -6,22 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/sidepages.css">
+    <link rel="stylesheet" href="style/sidepages.css" name="style" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
+    <script>
+        document.getElementById("style").href=localStorage.getItem("result")
+    </script>
     <style>
         #sidenav {
             height: 100%;
             width: 15%;
-            float:left
-        
+            float: left;
+            /* position:fixed; */
         }
 
-        #sidenav li {
+        /* #sidenav li:hover{
+            background-color: #E8E8E7 ;
+        } */
+
+        #sidenav a {
             display: block;
             text-align: left;
             padding: 6px 6px 6px 20px;
         }
-        .sticky{
+
+        .sticky {
             position: fixed;
             top: 0;
         }
@@ -32,10 +40,28 @@
             width: 83%;
         }
 
+        p {
+            font-size: 30px;
+            font-family: 'Tahoma';
+            font-style: italic;
+        }
+
+        span {
+            font-size: 15px;
+        }
+
+        #drop {
+            border: none;
+            font-family: 'Courier New';
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
         @media only screen and (max-width: 600px) {
             #sidenav {
                 width: 100%;
                 height: auto;
+
             }
 
             #sidenav li {
@@ -52,10 +78,11 @@
             .article {
                 text-align: justify;
                 width: 100%;
-                
+
             }
         }
     </style>
+
 
 </head>
 
@@ -66,14 +93,53 @@
             <li class='active'>Project</li>
             <li><a href='about.html'>About</a></li>
             <li><a href="contact.html">Contacts</a></li>
+            <select name="drop" id="drop" onchange="changeThm()"> 
+                <option value="none">Theme</option>
+                <option value="thm1">Theme 1</option>
+                <option value="thm2">Theme 2</option>
+            </select>
+            <!-- <li id="drop"><a href="#">Theme</a>
+                <div id="dropm">
+                    <span>Theme 1</span>
+                    <span>Theme 2</span>
+                </div>
+            </li> -->
+
+
         </ul>
     </div>
-    <ul id='sidenav'>
-        <li><a href="#分析">分析</a></li>
-        <li><a href="#視覺化圖">視覺化圖</a></li>
-        <li><a href="#技術">技術</a></li>
-    </ul>
+    <div>
+        <ul id='sidenav'>
+
+            <li><a href="#analysis">分析</a></li>
+            <li><a href="#visualization">視覺化圖</a></li>
+            <li><a href="#skill">技術</a></li>
+        </ul>
+    </div>
     <div class="article">
+        <p id="analysis">分析</p>
+        <span>
+            印度第二波新冠肺炎疫情持續延燒，不過金融市場迄今表現卻相對抗跌，專家表示，印度依舊是誘人的投資標的，但投資人應留意潛在封城風險。
+
+            即便印度第二波疫情來勢洶洶，印度標普BSE Sensex指數2021年迄今仍累計上漲逾3.6％，以藍籌股為主的Nifty 50指數升幅超過7％。
+
+            指標BSE Sensex指數10日收高0.6％，報49,502.41點。Nifty 50指數揚升0.8％，報14,942.35點。
+
+            印度10日再新增逾36.6萬起確診病例，死亡案例達3,754例，讓整體確診案例上升至逾2,149萬例，死亡人數超過23.4萬人。印度目前為全球疫情第二嚴重的國家，死亡人數全球第三高。
+
+            安本標準投資管理董事長楊修（Hugh Young）表示，他對印度股市在疫情升溫時相對抗跌「略感意外」。
+
+            有別於義大利和英國疫情升溫時股市崩跌，楊修認為印度股市表現相對穩定是因為投資人不願認賠出場，緊握投資標的不放。
+
+            不過楊修亦指出，雖然印度的公衛危機現階段相當嚴峻，但就長期而言，印度仍然是吸引投資人的市場。他表示，印度股市可能下探，但看好印度市場的長期投資人仍會買進。
+
+            面對印度確診案例不斷飆升，部分地方政府已經宣布新一波封城防疫措施，也讓印度總理莫迪頒布全國封鎖令的壓力加劇。印度政府在2020年實施嚴格的封城計畫，防止新冠肺炎病毒擴散，不過卻嚴重打擊經濟，2020年4至6月印度經濟緊縮23.9％。
+
+            印度政府推出一連串財政刺激，致力重振經濟。印度央行日前宣布新的救市計畫，包括為市場提供額外的流動性，和給予小企業貸款減免等，以緩和疫情對經濟的壓力。
+
+            新加坡星展銀行（DBS）經濟學家拉奧（Radhika Rao）表示，雖然金融市場迄今未受疫情升溫影響，但投資人仍應保持謹慎，因為疫情擴散可能意味著大規模和長期封城計畫，將會影響股市漲勢。
+        </span>
+        <p id="visualization">視覺化</p>
         <span>
             印度第二波新冠肺炎疫情持續延燒，不過金融市場迄今表現卻相對抗跌，專家表示，印度依舊是誘人的投資標的，但投資人應留意潛在封城風險。
 
@@ -113,25 +179,9 @@
             印度政府推出一連串財政刺激，致力重振經濟。印度央行日前宣布新的救市計畫，包括為市場提供額外的流動性，和給予小企業貸款減免等，以緩和疫情對經濟的壓力。
 
             新加坡星展銀行（DBS）經濟學家拉奧（Radhika Rao）表示，雖然金融市場迄今未受疫情升溫影響，但投資人仍應保持謹慎，因為疫情擴散可能意味著大規模和長期封城計畫，將會影響股市漲勢。
-            印度第二波新冠肺炎疫情持續延燒，不過金融市場迄今表現卻相對抗跌，專家表示，印度依舊是誘人的投資標的，但投資人應留意潛在封城風險。
-
-            即便印度第二波疫情來勢洶洶，印度標普BSE Sensex指數2021年迄今仍累計上漲逾3.6％，以藍籌股為主的Nifty 50指數升幅超過7％。
-
-            指標BSE Sensex指數10日收高0.6％，報49,502.41點。Nifty 50指數揚升0.8％，報14,942.35點。
-
-            印度10日再新增逾36.6萬起確診病例，死亡案例達3,754例，讓整體確診案例上升至逾2,149萬例，死亡人數超過23.4萬人。印度目前為全球疫情第二嚴重的國家，死亡人數全球第三高。
-
-            安本標準投資管理董事長楊修（Hugh Young）表示，他對印度股市在疫情升溫時相對抗跌「略感意外」。
-
-            有別於義大利和英國疫情升溫時股市崩跌，楊修認為印度股市表現相對穩定是因為投資人不願認賠出場，緊握投資標的不放。
-
-            不過楊修亦指出，雖然印度的公衛危機現階段相當嚴峻，但就長期而言，印度仍然是吸引投資人的市場。他表示，印度股市可能下探，但看好印度市場的長期投資人仍會買進。
-
-            面對印度確診案例不斷飆升，部分地方政府已經宣布新一波封城防疫措施，也讓印度總理莫迪頒布全國封鎖令的壓力加劇。印度政府在2020年實施嚴格的封城計畫，防止新冠肺炎病毒擴散，不過卻嚴重打擊經濟，2020年4至6月印度經濟緊縮23.9％。
-
-            印度政府推出一連串財政刺激，致力重振經濟。印度央行日前宣布新的救市計畫，包括為市場提供額外的流動性，和給予小企業貸款減免等，以緩和疫情對經濟的壓力。
-
-            新加坡星展銀行（DBS）經濟學家拉奧（Radhika Rao）表示，雖然金融市場迄今未受疫情升溫影響，但投資人仍應保持謹慎，因為疫情擴散可能意味著大規模和長期封城計畫，將會影響股市漲勢。
+        </span>
+        <p id="skill">Skill</p>
+        <span>
             印度第二波新冠肺炎疫情持續延燒，不過金融市場迄今表現卻相對抗跌，專家表示，印度依舊是誘人的投資標的，但投資人應留意潛在封城風險。
 
             即便印度第二波疫情來勢洶洶，印度標普BSE Sensex指數2021年迄今仍累計上漲逾3.6％，以藍籌股為主的Nifty 50指數升幅超過7％。
@@ -156,7 +206,7 @@
     </div>
 
 
-    
+
 
     <script>
         //  sideNav & top button start
@@ -184,6 +234,20 @@
         }
         // sideNav & top button end
 
+        function changeThm() {
+
+            switch (drop.value) {
+                case "thm1": document.getElementsByTagName("link").style.href = "style/sidepages.css" ;
+                return localStorage.setItem("result","style/sidepages.css");
+                break;
+                case "thm2": document.getElementsByTagName("link").style.href = "style/sidepages_2.css" ; 
+                return localStorage.setItem("result","style/sidepages_2.css");
+                break;
+                default:;
+
+            }
+        }
+        
     </script>
 </body>
 

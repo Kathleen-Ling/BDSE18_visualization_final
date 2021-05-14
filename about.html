@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/sidepages.css">
+    <link rel="stylesheet" href="style/sidepages.css" id="style">
+
+    <script>
+        document.getElementById("style").href=localStorage.getItem("result")
+    </script>
 </head>
 
 <body>
