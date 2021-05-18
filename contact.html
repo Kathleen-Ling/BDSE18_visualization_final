@@ -8,6 +8,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/sidepages.css" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
+    <script>
+        if(localStorage.length!=0){
+            document.getElementById("style").href = localStorage.getItem("result")
+        }
+    </script>
     <style>
         .block {
             display: inline-block;
@@ -55,9 +60,7 @@
             }
         }
     </style>
-    <script>
-        document.getElementById("style").href = localStorage.getItem("result")
-    </script>
+
 </head>
 
 <body>

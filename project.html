@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style/sidepages.css" name="style" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
     <script>
-        document.getElementById("style").href=localStorage.getItem("result")
+        if(localStorage.length!=0){
+            document.getElementById("style").href = localStorage.getItem("result")
+        }
     </script>
     <style>
         #sidenav {
@@ -93,7 +95,7 @@
             <li class='active'>Project</li>
             <li><a href='about.html'>About</a></li>
             <li><a href="contact.html">Contacts</a></li>
-            <select name="drop" id="drop" onchange="changeThm()"> 
+            <select name="drop" id="drop" onchange="changeThm()">
                 <option value="none">Theme</option>
                 <option value="thm1">Theme 1</option>
                 <option value="thm2">Theme 2</option>
@@ -237,17 +239,17 @@
         function changeThm() {
 
             switch (drop.value) {
-                case "thm1": document.getElementsByTagName("link").style.href = "style/sidepages.css" ;
-                return localStorage.setItem("result","style/sidepages.css");
-                break;
-                case "thm2": document.getElementsByTagName("link").style.href = "style/sidepages_2.css" ; 
-                return localStorage.setItem("result","style/sidepages_2.css");
-                break;
-                default:;
+                case "thm1": document.getElementsByTagName("link").style.href = "style/sidepages.css";
+                    return localStorage.setItem("result", "style/sidepages.css");
+                    break;
+                case "thm2": document.getElementsByTagName("link").style.href = "style/sidepages_2.css";
+                    return localStorage.setItem("result", "style/sidepages_2.css");
+                    break;
+                default: localStorage.setItem("result", "style/sidepages.css");
 
             }
         }
-        
+
     </script>
 </body>
 
