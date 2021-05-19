@@ -55,15 +55,34 @@ a:visited {
     background-color: #e9dfc4;
 }
 
+p {
+    font-size: 30px;
+    font-style: italic;
+}
 
+span {
+    font-size: 20px;
+}
+.article {
+    text-align: justify;
+    width: 100%;
+}
  @media only screen and (max-width: 600px){
     li {
         display: block;           
     }
-    #sidenav li:hover{
+
+    #sidenav a:hover{
         background-color: unset ;
         }
     #sidenav li:hover a{
-        color: #A3794A ; 
+        color: #7F8C8D ; 
+    }
+
+    p{
+        font-size: 25px;
+    }
+    span{
+        font-size: 17px;
     }
  }

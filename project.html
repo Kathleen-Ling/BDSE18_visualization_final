@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="style/sidepages.css" name="style" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
     <script>
-        if(localStorage.length!=0){
+        if (localStorage.length != 0) {
             document.getElementById("style").href = localStorage.getItem("result")
         }
     </script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <style>
         #sidenav {
             height: 100%;
@@ -42,22 +43,31 @@
             width: 83%;
         }
 
-        p {
-            font-size: 30px;
-            font-family: 'Tahoma';
-            font-style: italic;
-        }
-
-        span {
-            font-size: 15px;
-        }
-
         #drop {
             border: none;
             font-family: 'Courier New';
             font-size: 20px;
             text-transform: uppercase;
         }
+        /* correlation  */
+        svg {
+            font: 12px sans-serif;
+            text-anchor: middle;
+            width: 600px;
+            height:600px;
+        }
+
+        rect {
+            stroke: lightgray;
+            /* stoke-width: 1px; */
+            fill: none;
+        }
+
+        .y.axis path {
+            fill: none;
+            stroke: none;
+        }
+        /* correlation end */
 
         @media only screen and (max-width: 600px) {
             #sidenav {
@@ -68,7 +78,11 @@
 
             #sidenav li {
                 display: inline-block;
-                padding: 3px;
+                /* padding: 3px; */
+            }
+
+            #sidenav a {
+                padding: unset;
             }
 
             .sticky {
@@ -81,6 +95,10 @@
                 text-align: justify;
                 width: 100%;
 
+            }
+            svg{
+                width:100%;
+                height:auto;
             }
         }
     </style>
@@ -100,26 +118,20 @@
                 <option value="thm1">Theme 1</option>
                 <option value="thm2">Theme 2</option>
             </select>
-            <!-- <li id="drop"><a href="#">Theme</a>
-                <div id="dropm">
-                    <span>Theme 1</span>
-                    <span>Theme 2</span>
-                </div>
-            </li> -->
-
 
         </ul>
     </div>
     <div>
         <ul id='sidenav'>
 
-            <li><a href="#analysis">分析</a></li>
-            <li><a href="#visualization">視覺化圖</a></li>
+            <li><a href="#PearsonTitle">相關係數</a></li>
+            <li><a href="#PCA">PCA</a></li>
             <li><a href="#skill">技術</a></li>
         </ul>
     </div>
     <div class="article">
-        <p id="analysis">分析</p>
+        <p id="PearsonTitle">Correlation Coefficient</p>
+        <script src="JS/correlationCoeff.js"></script>
         <span>
             印度第二波新冠肺炎疫情持續延燒，不過金融市場迄今表現卻相對抗跌，專家表示，印度依舊是誘人的投資標的，但投資人應留意潛在封城風險。
 
@@ -141,7 +153,7 @@
 
             新加坡星展銀行（DBS）經濟學家拉奧（Radhika Rao）表示，雖然金融市場迄今未受疫情升溫影響，但投資人仍應保持謹慎，因為疫情擴散可能意味著大規模和長期封城計畫，將會影響股市漲勢。
         </span>
-        <p id="visualization">視覺化</p>
+        <p id="PCA">PCA</p>
         <span>
             印度第二波新冠肺炎疫情持續延燒，不過金融市場迄今表現卻相對抗跌，專家表示，印度依舊是誘人的投資標的，但投資人應留意潛在封城風險。
 
@@ -208,8 +220,8 @@
     </div>
 
 
-
-
+    <div>
+    
     <script>
         //  sideNav & top button start
 
@@ -251,6 +263,7 @@
         }
 
     </script>
+    
 </body>
 
 </html>
