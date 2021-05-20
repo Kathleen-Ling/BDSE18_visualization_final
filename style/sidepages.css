@@ -68,6 +68,29 @@ span {
 
 }
 
+#stockID {
+    display: block;
+    width: 98%;
+    height: 25px;
+    border:2px solid #C1B397;
+    /* border-bottom: 2px solid #C1B397; */
+    margin:3px;
+    margin-bottom: 5px;
+}
+#stockID:focus{
+    border:2px solid orange
+}
+#submit,
+#reset {
+    width: 100px;
+    height: 25px;
+    margin: 3px;
+    background-color: #C1B397;
+    text-decoration: none;
+    border:none;
+    color: white;
+}
+
  @media only screen and (max-width: 600px){
     li {
         display: block;           
@@ -84,4 +107,5 @@ span {
     span{
         font-size: 17px;
     }
+
  }
