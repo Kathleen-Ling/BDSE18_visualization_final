@@ -47,7 +47,9 @@ a:visited {
     color:black;
 }
  /* navigation bar end */
-
+#sidenav{
+    background-color: #C1B397;
+}
  #sidenav a:hover{
     /* background-color: #A28E63 ; */
     background-color: #C1B397 ;
@@ -62,15 +64,9 @@ p {
 span {
     font-size: 20px;
 }
-.article {
-    text-align: justify;
-    width: 100%;
-
-}
-
 #stockID {
     display: block;
-    width: 98%;
+    width: 100%;
     height: 25px;
     border:2px solid #C1B397;
     /* border-bottom: 2px solid #C1B397; */
@@ -99,7 +95,7 @@ span {
         background-color: unset;
         }
     #sidenav li:hover a{
-        color: #C1B397; 
+        color: #757472; 
     }
     p{
         font-size: 25px;

@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/sidepages.css" name="style" id="style">
+    <link rel="stylesheet" href="style/sidepages_2.css" name="style" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
     <script>
-        if (localStorage.length != 0) {
+        if (localStorage.getItem("result").length != 0) {
             document.getElementById("style").href = localStorage.getItem("result")
         }
     </script>
@@ -19,6 +19,10 @@
             height: 100%;
             width: 15%;
             float: left;
+            /* //adding */
+
+            padding-right: 3px;
+            position: fixed;
         }
 
         #sidenav a {
@@ -34,7 +38,9 @@
 
         .article {
             float: right;
-            width: 84%;
+            width: 85%;
+            text-align: justify;
+            
         }
 
         #drop {
@@ -43,7 +49,8 @@
             font-size: 20px;
             text-transform: uppercase;
         }
-        #stockImg{
+
+        #stockImg {
             width: 70%;
         }
 
@@ -54,7 +61,16 @@
             #sidenav {
                 width: 100%;
                 height: auto;
+                padding: 2px
+                    /* display: block; */
+                    /* margin-bottom: 15px; */
+                    /* background-color: unset; */
+                    /* border-bottom: 3px dashed #ada79a; */
 
+            }
+
+            #sidenav ul {
+                background-color: unset;
             }
 
             #sidenav li {
@@ -63,6 +79,7 @@
 
             #sidenav a {
                 padding: unset;
+                color: white;
             }
 
             .sticky {
@@ -86,10 +103,19 @@
                 width: 100%;
 
             }
-            #stockImg{
+
+            #stockImg {
                 width: 100%;
 
             }
+
+            #XGboost {
+                margin-top: 50px;
+            }
+
+            /* .sticky+#XGboost{
+                padding-top: 1000px;
+            } */
         }
     </style>
 
@@ -111,41 +137,42 @@
 
         </ul>
     </div>
-    <div>
-        <ul id='sidenav'>
-
-            <li><a href="#PearsonTitle">相關係數</a></li>
-            <li><a href="#PCA">PCA</a></li>
+    <div id='sidenav'>
+        <ul style="height: 100%;">
+            <li><a href="#XGboost">XGboost </a></li>
+            <li><a href="#Keras">Keras</a></li>
             <li><a href="#skill">技術</a></li>
         </ul>
     </div>
     <div class="article">
-        <p id="PearsonTitle">Correlation Coefficient</p>
+        <div style="padding:0px 10px;">
+            <p id="XGboost">XGboost 特徵選取</p>
 
-        <span>
+            <span>
+                
+            </span>
+            <p id="Keras" style="margin-bottom: 20px;">Keras Result</p>
+            <form action="#" method="GET" onsubmit="return stockValue()">
+                <label for="stockID">Stock ID</label>
+                <input type="number" id="stockID" name="Stock_ID" maxlength="4">
+                <input type="submit" value="Submit" id="submit">
+                <input type="reset" value="Reset" id="reset">
+            </form>
+            <div style="text-align: center;">
+                <img src="" id="stockImg">
+            </div>
+            <p id="skill">Skill</p>
+            <span>
 
-        </span>
-        <p id="PCA">PCA</p>
-        <form action="#" method="GET" onsubmit="return stockValue()">
-            <label for="stockID">Stock ID</label>
-            <input type="text" id="stockID" name="Stock_ID" maxlength="4">
-            <input type="submit" value="Submit" id="submit">
-            <input type="reset" value="Reset" id="reset">
-        </form>
-        <div style="text-align: center;">
-            <img src="" id="stockImg">
+            </span>
+            <button onclick="topFunction()" id="topBtn" title="Go to top"><img src='image/top.png'></button>
         </div>
-        <p id="skill">Skill</p>
-        <span>
-
-        </span>
-        <button onclick="topFunction()" id="topBtn" title="Go to top"><img src='image/top.png'></button>
     </div>
     <script>
         function stockValue() {
             const x = document.getElementById("stockID").value;
-            document.getElementById('stockImg').src=`dataset/png/Keras_LSTM_${x}.png`;
-            return false;            
+            document.getElementById('stockImg').src = `dataset/png/Keras_LSTM_${x}.png`;
+            return false;
         }
 
     </script>
@@ -186,7 +213,7 @@
                 case "thm2": document.getElementsByTagName("link").style.href = "style/sidepages_2.css";
                     return localStorage.setItem("result", "style/sidepages_2.css");
                     break;
-                default: localStorage.setItem("result", "style/sidepages.css");
+                default: localStorage.setItem("result", "style/sidepages_2.css");
 
             }
         }

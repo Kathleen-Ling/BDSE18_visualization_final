@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BDSE18</title>
+
     <style>
         * {
             padding: 0px;
@@ -26,6 +27,7 @@
             font-weight: 600;
             font-size: 20px;
         }
+
         /* links style */
         a:link {
             color: black;
@@ -38,6 +40,7 @@
         a:hover {
             color: #b67f75;
         }
+
         /* links style end*/
         .div1 {
             /* border: 3px dashed #ffffff; */
@@ -65,11 +68,13 @@
             .center {
                 font-size: 70%;
             }
-            select{
+
+            select {
                 margin-top: 10px;
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -86,31 +91,45 @@
                 </div>
             </div>
             <div style="position: relative; bottom:-90% ;">
-            <select name="theme" id="theme" onchange="changeImg()">
-            <option value="none">select theme</option>
-            <option value="img1">theme 1</option>
-            <option value="img2">theme 2</option>
-            <option value="img3">theme 3</option>
-            <option value="img4">theme 4</option>
-            <option value="img5">theme 5</option>
-            </select>
+                <select name="theme" id="theme" onchange="changeImg()">
+                    <option value="none">select theme</option>
+                    <option value="img1">theme 1</option>
+                    <option value="img2">theme 2</option>
+                    <option value="img3">theme 3</option>
+                    <option value="img4">theme 4</option>
+                    <option value="img5">theme 5</option>
+                </select>
             </div>
         </div>
     </article>
     <script>
         function changeImg() {
 
-            switch(theme.value){
-                case "img1" : document.querySelector("body").style.backgroundImage="url('image/img1.jpg')";break;
-                case "img2" : document.querySelector("body").style.backgroundImage="url('image/img2.jpg')";break;
-                case "img3" : document.querySelector("body").style.backgroundImage="url('image/img3.jpg')";break;
-                case "img4" : document.querySelector("body").style.backgroundImage="url('image/img4.jpg')";break;
-                case "img5" : document.querySelector("body").style.backgroundImage="url('image/img5.jpg')";break;
-                default: ;
+            switch (theme.value) {
+                case "img1": document.querySelector("body").style.backgroundImage = "url('image/img1.jpg')";
+                    return localStorage.setItem("backthm", 'image/img1.jpg');
+                    break;
+                case "img2": document.querySelector("body").style.backgroundImage = "url('image/img2.jpg')";
+                    return localStorage.setItem("backthm", 'image/img2.jpg');
+                    break;
+                case "img3": document.querySelector("body").style.backgroundImage = "url('image/img3.jpg')";
+                    return localStorage.setItem("backthm", 'image/img3.jpg');
+                    break;
+                case "img4": document.querySelector("body").style.backgroundImage = "url('image/img4.jpg')";
+                    return localStorage.setItem("backthm", 'image/img4.jpg');
+                    break;
+                case "img5": document.querySelector("body").style.backgroundImage = "url('image/img5.jpg')";
+                    return localStorage.setItem("backthm", 'image/img5.jpg');
+                    break;
+                default: localStorage.setItem("backthm", 'image/img4.jpg');
 
             }
 
         }
+        var localS=localStorage.getItem("backthm")
+            if (localS.length != 0) {
+                document.querySelector("body").style.backgroundImage = 'url(' + localS +')';
+            }
     </script>
 </body>
 
