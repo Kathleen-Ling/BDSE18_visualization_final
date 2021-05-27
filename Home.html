@@ -127,7 +127,7 @@
 
         }
         var localS=localStorage.getItem("backthm")
-            if (localS.length != 0) {
+            if (localS!= null) {
                 document.querySelector("body").style.backgroundImage = 'url(' + localS +')';
             }
     </script>

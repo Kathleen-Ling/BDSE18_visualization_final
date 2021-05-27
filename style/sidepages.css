@@ -64,6 +64,13 @@ p {
 span {
     font-size: 20px;
 }
+.title{
+    background-color: #C1B397;
+    color:white;
+    width:300px;
+    margin-top: 10px;
+    padding-left: 5px;
+}
 #stockID {
     display: block;
     width: 100%;

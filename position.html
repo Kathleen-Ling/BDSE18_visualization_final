@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style/sidepages_2.css" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
     <script>
-        if(localStorage.length!=0){
+        if(localStorage.getItem("result")!=null){
             document.getElementById("style").href = localStorage.getItem("result")
         }
     </script>

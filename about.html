@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/sidepages_2.css" id="style">
     <script>
-        if(localStorage.length!=0){
+        if(localStorage.getItem("result")!=null){
             document.getElementById("style").href = localStorage.getItem("result")
         }
     </script>
@@ -31,11 +31,11 @@
         </ul>
     </div>
     <div class="article">
-        <p>Purpose</p>
+        <p class='title'>Purpose</p>
         <span>
             
         </span>
-        <p>GitHub</p>
+        <p class='title'>GitHub</p>
     </div>
     
     

@@ -64,6 +64,13 @@ p {
 span {
     font-size: 20px;
 }
+.title{
+    background-color: #7F8C8D;
+    color:white;
+    width:300px;
+    margin-top: 10px;
+    padding-left: 5px;
+}
 .article {
     background-color: rgb(245, 245, 245);
 }
