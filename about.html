@@ -6,17 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/sidepages_2.css" id="style">
+    <link rel="stylesheet" href="style/sidepages_3.css" id="style">
+    <link rel="stylesheet" href="style/topBtn.css">
+    <link rel="stylesheet" href="style/thm.css">
     <script>
-        if(localStorage.getItem("result")!=null){
+        if (localStorage.getItem("result") != null) {
             document.getElementById("style").href = localStorage.getItem("result")
         }
     </script>
     <style>
-        p {
-            padding-top: 5px;
-            padding-left: 10px;
+        p{
+            padding:5px 0px 5px 5px;
+            letter-spacing: 4px;
             text-align: left;
+        }
+        .abstract dt{
+            margin-top: 10px;
+            border-bottom: 3px solid ;
+        }
+        .abstract dd{
+            margin-top: 5px;
+        }
+        dt{
+            padding:10px;
+            letter-spacing: 2px;
+        }
+        dd{
+            padding-left: 50px;
+            letter-spacing: 1.5px;
+        }
+        .secdd{
+            padding-left: 50px;
         }
     </style>
 </head>
@@ -24,21 +44,87 @@
 <body>
     <div class="backstyle">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="project.html">Project</a></li>
-            <li class='active'>About</li>
-            <li><a href="position.html">Position</a></li>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="position.html">台灣50</a></li>
+            <li><a href="project.html">股票分析</a></li>
+            <li class='active'>關於</li>
+            <select name="drop" id="drop" onchange="changeThm()">
+                <option value="none">Theme</option>
+                <option value="thm1">Theme 1</option>
+                <option value="thm2">Theme 2</option>
+                <option value="thm3">Theme 3</option>
+            </select>
         </ul>
     </div>
-    <div class="article">
-        <p class='title'>Purpose</p>
-        <span>
-            
-        </span>
-        <p class='title'>GitHub</p>
+    <div style="text-align: left;">
+        <p class='title'>專題簡介</p>
+        <dl class="abstract">
+            <dt>主題介紹</dt>
+            <dd>(1)	在台灣股市茫茫大海的數據中，找到與股價關聯性高的指標</dd>
+            <dd>(2)	透過程式，縮短與減少人為判斷的時間和錯誤可能性</dd>
+            <dd style="padding-bottom: 10px;">(3)	探索金融產業與大數據、AI模型結合的成果經驗</dd>
+            <dt>實作歷程</dt>
+            <dd>(1)	資料簡介：臺灣證券交易所、Goodinfo股市資訊網、FinMind</dd>
+            <dd>(2)	萃取/清理資料過程：<br>
+                <div class="secdd">
+                <span>・資料清洗：將所需的特徵欄位資料轉換成正確的格式，方便後續使用<br></span>
+                <span>・人為篩選所需的特徵資料，並且剔除離群值、維度調整<br></span>
+            </div>
+             </dd>
+            <dd >(3)	數據分析的方法：<br>
+                <div class="secdd">
+                <span>・利用Python中的TALib和台股的日交易資料去建立技術面的特徵點<br></span>
+                <span>・使用隨機森林、XGBoost找出與股價關聯係數高的特徵<br></span>
+                <span>・利用找出來的特徵去跑LSTM模型預測股價<br></span>
+            </div>
+            </dd>
+            <dd style="padding-bottom: 10px;">(4)	資料視覺化：透過HTML、D3.js架設數據可視化的網站，提供方便快速的資料閱覽來源</dd>
+            <dt>價值分析</dt>
+            <dd>(1)	提供一目了然的資訊看板</dd>
+            <dd>(2)	透過機器、深度學習模型的輔助，建立投資人理性投資的起點</dd>
+            <dd style="padding-bottom: 20px;">(3)	結合量化交易，在股海中建立投資策略，實現財富自由</dd>
+        </dl>
+        <p class='title'>成員</p>
+        <dl>
+            <dt>
+                李子顥(組長)
+            </dt>
+            <dd>・網頁爬蟲+資料預處理</dd>
+            <dd>・架設叢集</dd>
+            <dt>
+                李謀勳
+            </dt>
+            <dd>・架設MySQL</dd>
+            <dd>・架設叢集</dd>
+            <dt>
+                陳姿伶
+            </dt>
+            <dd>・網頁爬蟲+資料清洗</dd>
+            <dd>・架設叢集</dd>
+            <dt>
+                劉文裕
+            </dt>
+            <dd>・機器學習</dd>
+            <dd>・架設叢集</dd>
+            <dt>
+                陳彥伶
+            </dt>
+            <dd>・網頁設計+資料可視化</dd>
+            <dd style="padding-bottom: 20px;">・架設叢集</dd>
+
+        </dl>
+              
+        
     </div>
-    
-    
+    <div>
+        <button onclick="topFunction()" id="topBtn" title="Go to top"><img class="topimg" src='image/top.png'></button>
+
+    </div>
+
+    <script src="JS/topBtn.js"></script>
+    <script src="JS/thm.js"></script>
+
+
 </body>
 
 </html>

@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/sidepages_2.css" name="style" id="style">
+    <link rel="stylesheet" href="style/sidepages_3.css" name="style" id="style">
     <link rel="stylesheet" href="style/topBtn.css">
+    <link rel="stylesheet" href="style/thm.css">
     <script>
         if (localStorage.getItem("result") != null) {
             document.getElementById("style").href = localStorage.getItem("result")
@@ -30,6 +31,7 @@
             display: block;
             text-align: left;
             padding: 6px 6px 6px 20px;
+            letter-spacing: 3px;
         }
 
         .sticky {
@@ -38,20 +40,21 @@
         }
 
         /* sidebar end */
-
+ 
         .article {
             float: right;
             width: 85%;
             text-align: justify;
 
         }
-
-        #drop {
-            border: none;
-            font-family: 'Courier New';
-            font-size: 20px;
-            text-transform: uppercase;
+        #stcode{
+            margin-top: 30px;
         }
+        p{
+            padding:5px 0px 5px 5px;
+            letter-spacing: 4px;
+        }
+
 
         #priceImg,
         #trndImg {
@@ -62,11 +65,8 @@
             padding: 50px 10px;
         }
 
-        #tooltip {
-            display: block;
-        }
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 768px) {
 
             /* sidebar atart */
             #sidenav {
@@ -78,14 +78,16 @@
             #sidenav ul {
                 background-color: unset;
             }
-
+            
             #sidenav li {
                 display: inline-block;
+                padding:2px
             }
 
             #sidenav a {
                 padding: unset;
                 color: white;
+                font-size: 80%;
             }
 
             .sticky {
@@ -134,14 +136,15 @@
 <body>
     <div class="backstyle">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class='active'>Project</li>
-            <li><a href='about.html'>About</a></li>
-            <li><a href="position.html">Position</a></li>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="position.html">台灣50</a></li>
+            <li class='active'>股票分析</li>
+            <li><a href='about.html'>關於</a></li>
             <select name="drop" id="drop" onchange="changeThm()">
                 <option value="none">Theme</option>
                 <option value="thm1">Theme 1</option>
                 <option value="thm2">Theme 2</option>
+                <option value="thm3">Theme 3</option>
             </select>
 
         </ul>
@@ -154,13 +157,11 @@
         </ul>
     </div>
     <div class="article">
+        <!-- <img src="image/ETF.jpg" alt="" style="width: 100% ;height:400px;"> -->
         <div>
             <div class="title">
                 <p id="stcode">股票代碼(台灣50)</p>
             </div>
-            <span>
-
-            </span>
             <form action="#" method="GET" onsubmit="return stockValue()">
                 <label for="stockID">Stock ID</label>
                 <input type="number" id="stockID" name="Stock_ID" maxlength="4">
@@ -183,9 +184,9 @@
                 <img src="" id="priceImg">
             </div> -->
             <div id=spName></div>
-            <div id=#tooltip >
+            <!-- <div id=#tooltip>
                 <span class='spAns'></span><span class="spPre"></span>
-            </div>
+            </div> -->
             <div id="spgraph"></div>
             <script src='JS/stockprice_graph.js'></script>
 
@@ -210,7 +211,7 @@
         window.onscroll = function () { scroll() };
 
         function scroll() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
                 sideNav.classList.add("sticky")
                 topbutton.style.display = "block";
             } else {
@@ -225,21 +226,8 @@
         }
         // sideNav & top button end
 
-        function changeThm() {
-
-            switch (drop.value) {
-                case "thm1": document.getElementsByTagName("link").style.href = "style/sidepages.css";
-                    return localStorage.setItem("result", "style/sidepages.css");
-                    break;
-                case "thm2": document.getElementsByTagName("link").style.href = "style/sidepages_2.css";
-                    return localStorage.setItem("result", "style/sidepages_2.css");
-                    break;
-                default: localStorage.setItem("result", "style/sidepages_2.css");
-
-            }
-        }
-
     </script>
+    <script src="JS/thm.js"></script>
 
 </body>
 

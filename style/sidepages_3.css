@@ -4,7 +4,7 @@
     
 }
 body {
-    background-color: rgb(245, 245, 245); 
+
     /* Text font */
     font-family: 'sans-serif ';
     text-align: center;
@@ -13,46 +13,43 @@ body {
  
  /* navigation bar start */
  .backstyle{
-     width: 100%;
-     background-color: #7F8C8D  ;
-     padding-bottom: 3px;
-     font-family: 'Courier New';
-     letter-spacing: 1.5px;
-}
+    background-color: black;
+    padding-bottom: 3px;
+    font-family: 'Courier New';
+    letter-spacing: 1.5px;
+ }
 ul {
     padding: 5px;
-    /* background-color: #E9D5A0; */
-    background-color: #e9dfc4;
-}
+    background-color: black;
+    }
 
 li {
     display: inline;           
 }
-
 .active {
-    color: #7F8C8D  ;
+    color: #C1B397;
     text-transform: uppercase;
 }
 a:link {
     text-decoration: none;
-    color:#3A372F;
+    color:white;
 }
 a:visited {
     text-decoration: none;
-    color:#3A372F;
+    color:white;
 }
  /* navigation bar end */
- #sidenav{
-    background-color: #7F8C8D;
+#sidenav{
+    background-color: black;
 }
-#sidenav a:hover{
+ #sidenav a:hover{
     /* background-color: #A28E63 ; */
-    background-color: #7F8C8D  ;
-    color: white; 
-    
+    background-color: #1f1f1ffb ;
+    color: white;    
 }
 #drop{
-    background-color: #e9dfc4;
+    background-color: black;
+    color:white;
 }
 
 p {
@@ -63,48 +60,47 @@ span {
     font-size: 20px;
 }
 .title{
-    background-color: #7F8C8D;
+    background-color: #474747;
     color:white;
     width:300px;
     margin-top: 10px;
     padding-left: 5px;
+   
 }
 .article {
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(241, 240, 240); */
+    text-align: left;
 }
-
 #stockID {
     display: block;
     width: 100%;
     height: 25px;
-    border:2px solid #7F8C8D ;
+    border:2px solid #474747;
     /* border-bottom: 2px solid #C1B397; */
     margin:3px;
     margin-bottom: 5px;
-    background-color: rgb(245, 245, 245);
 }
 #stockID:focus{
-    border:2px solid grey;
-    
+    border:2px solid orange
 }
 #submit,
 #reset {
     width: 100px;
     height: 25px;
     margin: 3px;
-    background-color: #7F8C8D ;
+    background-color: #474747;
     text-decoration: none;
     border:none;
     color: white;
 }
+
  @media only screen and (max-width: 768px){
      #sidenav a:hover{
-        background-color: unset ;
+        background-color: unset;
         }
     #sidenav li:hover a{
-        color: #e9dfc4; 
+        color: #757472; 
     }
-
     p{
         font-size: 25px;
     }

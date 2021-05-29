@@ -14,10 +14,10 @@ d3.csv("dataset/stock_list_50.csv", function (error, data) {
 
             })
         }
-        var sid = localStorage.getItem("priceCsv")
-        var inx = lstStk.map(x => x.ID).indexOf(`${sid}`)
+        var s_id = localStorage.getItem("priceCsv")
+        var inx = lstStk.map(x => x.ID).indexOf(`${s_id}`)
         svg2.append('text')
-            .text(function () { if (sid != null) { return data[inx]["stock_id"] + data[inx]["stock_name"] } })
+            .text(function () { if (s_id != null) { return data[inx]["stock_id"] + data[inx]["stock_name"] } })
             .style('fill', 'black')
             .style('font-size', '25px')
             .style('padding-left','10px')
