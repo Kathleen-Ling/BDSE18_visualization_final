@@ -21,7 +21,6 @@ body {
 }
 ul {
     padding: 5px;
-    /* background-color: #E9D5A0; */
     background-color: #e9dfc4;
 }
 
@@ -42,11 +41,11 @@ a:visited {
     color:#3A372F;
 }
  /* navigation bar end */
+
  #sidenav{
     background-color: #7F8C8D;
 }
 #sidenav a:hover{
-    /* background-color: #A28E63 ; */
     background-color: #7F8C8D  ;
     color: white; 
     
@@ -73,32 +72,8 @@ span {
     background-color: rgb(245, 245, 245);
 }
 
-#stockID {
-    display: block;
-    width: 100%;
-    height: 25px;
-    border:2px solid #7F8C8D ;
-    /* border-bottom: 2px solid #C1B397; */
-    margin:3px;
-    margin-bottom: 5px;
-    background-color: rgb(245, 245, 245);
-}
-#stockID:focus{
-    border:2px solid grey;
-    
-}
-#submit,
-#reset {
-    width: 100px;
-    height: 25px;
-    margin: 3px;
-    background-color: #7F8C8D ;
-    text-decoration: none;
-    border:none;
-    color: white;
-}
  @media only screen and (max-width: 768px){
-     #sidenav a:hover{
+    #sidenav a:hover{
         background-color: unset ;
         }
     #sidenav li:hover a{

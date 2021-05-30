@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
 var width = 950
 height = 950
-margin = 150
+margin = 140
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 var radius = Math.min(width, height) / 2 - margin
@@ -9,9 +9,7 @@ var radius = Math.min(width, height) / 2 - margin
 // append the svg object to the div called 'my_dataviz'
 var svg = d3.select("#indsD")
     .append("svg")
-    .attr("viewBox", `0 0 950 950`)
-    // .attr("width", width)
-    // .attr("height", height)
+    .attr("viewBox", `0 0 1000 950`)
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -19,7 +17,6 @@ var svg = d3.select("#indsD")
 var listData=["金融保險業", "半導體業", "電腦及週邊設備業", "航運業", "通信網路業", "塑膠工業", "水泥工業", "汽車工業", "其他業", "其他電子業", "電子零組件業", "光電業", "油電燃氣業", "食品工業", "紡織纖維", "貿易百貨業", "橡膠工業", "鋼鐵工業"]
 var data = { 金融保險業: 14, 半導體業: 8, 電腦及週邊設備業: 6, 航運業: 3, 通信網路業: 3, 塑膠工業: 3, 水泥工業: 2, 汽車工業: 2, 其他業: 2, 其他電子業: 2, 電子零組件業: 2, 光電業: 1, 油電燃氣業: 1, 食品工業: 1, 紡織纖維: 1, 貿易百貨業: 1, 橡膠工業: 1, 鋼鐵工業: 1 }
 
-console.log(listData.reverse())
 // set the color scale
 var color = d3.scaleOrdinal()
     .domain(listData)
@@ -100,13 +97,13 @@ var legend = svg.selectAll(".legend")
     .style("opacity", "1");
 
 legend.append("rect")
-    .attr("x", width -500)
+    .attr("x", width -490)
     .attr("width", 18)
     .attr("height", 18)
     .style("fill", function (d) { return color(d); });
 
 legend.append("text")
-    .attr("x", width - 505)
+    .attr("x", width - 495)
     .attr("y", 9)
     .attr("dy", ".35em")
     .attr("font-size","15px")

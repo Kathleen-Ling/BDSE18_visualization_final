@@ -43,11 +43,6 @@
 
         /* links style end*/
         .div1 {
-            /* border: 3px dashed #ffffff; */
-            /* position:relative;
-            margin:auto;
-            top:35px; */
-            /* padding: 25px; */
             width: 80%;
             height: 450px;
             position: absolute;
@@ -90,6 +85,8 @@
                     <span><a href="about.html">關於</a></span>
                 </div>
             </div>
+
+            <!-- change background image -->
             <div style="position: relative; bottom:-90% ;">
                 <select name="theme" id="theme" onchange="changeImg()">
                     <option value="none">select theme</option>
@@ -126,6 +123,7 @@
             }
 
         }
+        // store selected option to local storage
         var localS=localStorage.getItem("backthm")
             if (localS!= null) {
                 document.querySelector("body").style.backgroundImage = 'url(' + localS +')';

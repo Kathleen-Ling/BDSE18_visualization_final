@@ -33,8 +33,7 @@ var margin = { top: 10, right: 30, bottom: 30, left: 60 },
 // append the svg object to the body of the page
 var svg3 = d3.select("#sAdxrGraph")
     .append("svg")
-    // .attr("width", width + margin.left + margin.right)
-    // .attr("height", height + margin.top + margin.bottom)
+    // RWD
     .attr("viewBox", `0 0 900 400`)
     .append("g")
     .attr("transform",
@@ -46,7 +45,6 @@ d3.csv(`dataset/ADXR/${localStorage.getItem("priceCsv")}.csv`, function (error, 
         console.log('localstorage 還沒有Stock ID')
         document.getElementById("sAdxrGraph").style.display = "none";
     } else {
-        // console.log(data)
         var AXDRdata = [];
 
         for (i = 0; i < data.length; i++) {
@@ -55,7 +53,6 @@ d3.csv(`dataset/ADXR/${localStorage.getItem("priceCsv")}.csv`, function (error, 
                 "Adxr": parseFloat(data[i]["ADXR"]),
             })
         }
-        // console.log(d3.max(AXDRdata, function (d) {return d["Adx"] ;}))
 
         // Add X axis --> it is a date format
         var x = d3.scaleTime()
@@ -70,7 +67,6 @@ d3.csv(`dataset/ADXR/${localStorage.getItem("priceCsv")}.csv`, function (error, 
             .range([height, 0]);
         svg3.append("g")
             .call(d3.axisLeft(y));
-
 
 
         // Add the line

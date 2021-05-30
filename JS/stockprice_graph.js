@@ -33,21 +33,18 @@ var margin = { top: 10, right: 30, bottom: 30, left: 60 },
 // append the svg object to the body of the page
 var svg = d3.select("#spgraph")
     .append("svg")
-    // .attr("width", width + margin.left + margin.right)
-    // .attr("height", height + margin.top + margin.bottom)
+// RWD
     .attr("viewBox", `0 0 900 400`)
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-// localStorage.getItem("priceCsv")
 d3.csv(`dataset/Feature_LSTM_KERAS_csv_modify/Feature_Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, function (error, data) {
     if (error) {
         console.log('localstorage 還沒有Stock ID')
         document.getElementById("spgraph").style.display = "none";
     } else {
-        // console.log(data)
         var lstData = [];
 
         for (i = 0; i < data.length; i++) {
@@ -58,8 +55,7 @@ d3.csv(`dataset/Feature_LSTM_KERAS_csv_modify/Feature_Keras_LSTM_${localStorage.
 
             })
         }
-        console.log(d3.max(lstData, function (d) { return d.Answer; }))
-
+   
         // Add X axis --> it is a date format
         var x = d3.scaleTime()
             .domain(d3.extent(lstData, function (d) { return d.date; }))
@@ -132,7 +128,7 @@ d3.csv(`dataset/Feature_LSTM_KERAS_csv_modify/Feature_Keras_LSTM_${localStorage.
             .attr("cy", function (d) { return y(d.Answer) })
             .attr("r", 2)
             .attr("fill", "#888586 ")
-
+        // Add Legend
         svg
             .append('line')
             .attr('x1', '10px')
