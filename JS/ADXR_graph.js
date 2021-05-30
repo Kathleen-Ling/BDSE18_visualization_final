@@ -44,7 +44,7 @@ var svg3 = d3.select("#sAdxrGraph")
 d3.csv(`dataset/ADXR/${localStorage.getItem("priceCsv")}.csv`, function (error, data) {
     if (error) {
         console.log('localstorage 還沒有Stock ID')
-        document.getElementById("sAdxrGraph").style.visibility = "hidden";
+        document.getElementById("sAdxrGraph").style.display = "none";
     } else {
         // console.log(data)
         var AXDRdata = [];

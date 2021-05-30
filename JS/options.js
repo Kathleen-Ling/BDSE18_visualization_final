@@ -2,7 +2,7 @@
 
 d3.csv("dataset/stock_list_50.csv", function(data) {
 
-    var lstData = [];
+    var lstData = [{stock_id:"請選擇", stock_name:""}];
 
         for (i = 0; i < data.length; i++) {
             lstData.push({

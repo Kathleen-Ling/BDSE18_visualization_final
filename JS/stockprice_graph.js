@@ -45,7 +45,7 @@ var svg = d3.select("#spgraph")
 d3.csv(`dataset/Feature_LSTM_KERAS_csv_modify/Feature_Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, function (error, data) {
     if (error) {
         console.log('localstorage 還沒有Stock ID')
-        document.getElementById("spgraph").style.visibility = "hidden";
+        document.getElementById("spgraph").style.display = "none";
     } else {
         // console.log(data)
         var lstData = [];
