@@ -21,8 +21,6 @@
             height: 100%;
             width: 15%;
             float: left;
-            /* //adding */
-
             padding-right: 3px;
             position: fixed;
         }
@@ -61,8 +59,10 @@
             width: 85%;
         }
 
-        form {
-            padding: 50px 10px;
+        #selectButton {
+            margin: 30px 10px;
+            padding:10px;
+            letter-spacing: 1.5px;
         }
 
 
@@ -113,10 +113,6 @@
                 width: 100%;
             }
 
-            form {
-                padding: 50px 0px;
-            }
-
             /* form end */
             #priceImg,
             #trndImg {
@@ -162,12 +158,14 @@
             <div class="title">
                 <p id="stcode">股票代碼(台灣50)</p>
             </div>
-            <form action="#" method="GET" onsubmit="return stockValue()">
+            <!-- <form action="#" method="GET" onsubmit="return stockValue()">
                 <label for="stockID">Stock ID</label>
                 <input type="number" id="stockID" name="Stock_ID" maxlength="4">
                 <input type="submit" value="Submit" id="submit">
                 <input type="reset" value="Reset" id="reset">
-            </form>
+            </form> -->
+            <select id="selectButton"></select>
+            <script src="JS/options.js"></script>
             <div class="title">
                 <p id="ADXR" style="margin-bottom: 20px;">趨勢波動時序</p>
             </div>

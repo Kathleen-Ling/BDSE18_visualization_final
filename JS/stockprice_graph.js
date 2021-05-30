@@ -1,4 +1,3 @@
-
 var svg2 = d3.select("#spName")
 
 d3.csv("dataset/stock_list_50.csv", function (error, data) {
@@ -20,7 +19,7 @@ d3.csv("dataset/stock_list_50.csv", function (error, data) {
             .text(function () { if (s_id != null) { return data[inx]["stock_id"] + data[inx]["stock_name"] } })
             .style('fill', 'black')
             .style('font-size', '25px')
-            .style('padding-left','10px')
+            .style('padding-left', '10px')
 
     }
 })
@@ -42,7 +41,8 @@ var svg = d3.select("#spgraph")
         "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv(`dataset/csv/Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, function (error, data) {
+// localStorage.getItem("priceCsv")
+d3.csv(`dataset/Feature_LSTM_KERAS_csv_modify/Feature_Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, function (error, data) {
     if (error) {
         console.log('localstorage 還沒有Stock ID')
         document.getElementById("spgraph").style.visibility = "hidden";
@@ -53,12 +53,12 @@ d3.csv(`dataset/csv/Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, functio
         for (i = 0; i < data.length; i++) {
             lstData.push({
                 "date": d3.timeParse("%Y-%m-%d")(data[i]["End-date"]),
-                "Prediction": data[i]["Prediction"],
-                "Answer": data[i]["Answer"],
+                "Prediction": parseFloat(data[i]["Prediction"]),
+                "Answer": parseFloat(data[i]["Answer"]),
 
             })
         }
-        console.log(lstData)
+        console.log(d3.max(lstData, function (d) { return d.Answer; }))
 
         // Add X axis --> it is a date format
         var x = d3.scaleTime()
@@ -69,7 +69,7 @@ d3.csv(`dataset/csv/Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, functio
             .call(d3.axisBottom(x));
         // Add Y axis
         var y = d3.scaleLinear()
-            .domain([d3.min([d3.min(lstData, function (d) { return d.Answer; }) - 5, d3.min(lstData, function (d) { return d.Prediction; })]), d3.max([d3.max(lstData, function (d) { return d.Answer; }), d3.max(lstData, function (d) { return d.Prediction; })])])
+            .domain([d3.min([d3.min(lstData, function (d) { return (d["Answer"] - 5); }), d3.min(lstData, function (d) { return (d["Prediction"] - 5); })]), d3.max([d3.max(lstData, function (d) { return (d["Answer"] + 5); }), d3.max(lstData, function (d) { return (d["Prediction"] + 5); })])])
             .range([height, 0]);
         svg.append("g")
             .call(d3.axisLeft(y));
@@ -165,5 +165,5 @@ d3.csv(`dataset/csv/Keras_LSTM_${localStorage.getItem("priceCsv")}.csv`, functio
             .style('font-size', '15px')
 
     }
-   
+
 })
