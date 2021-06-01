@@ -2,13 +2,13 @@
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 30, bottom: 20, left: 50 },
     width = 1300 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    height = 450 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#MSEbar")
     .append("svg")
     // RWD
-    .attr("viewBox", `0 0 1300 400`)
+    .attr("viewBox", `0 0 1300 450`)
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
@@ -42,7 +42,11 @@ d3.csv("dataset/MSE.csv", function (error, data) {
             .padding([0.2])
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).tickSize(0));
+            .call(d3.axisBottom(x))
+            .selectAll("text")
+            .attr("transform", "translate(-10,0)rotate(-45)")
+            .attr("font-size","12px")
+            .style("text-anchor", "end");
 
         // Add Y axis
         var y = d3.scaleLinear()

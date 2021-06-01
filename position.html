@@ -61,13 +61,21 @@
     </div>
     <p class='title'>台灣50產業占比</p>
     <span>台灣50 成分股，產業前三名: 金融保險業(25.93%)、半導體業(14.81%)、電腦及週邊設備業(11.11%)</span>
-    <div id=indsD></div>
+    <div id="indsD"></div>
     <script src="JS/Inds_graph.js"></script>
     <p class='title'>MSE vs 產業</p>
     <span>MSE越小代表LSTM model 預測出來的股票收盤價越精準，因此MSE&lt10 的產業model預測出來的股價會接近真實的數值 </span>
     <span style="margin-bottom: 20px;">(y: 公司數，x: 產業類別) </span>
-    <div id=MSEbar></div>
+    <div id="MSEbar"></div>
     <script src="JS/MSE_graph.js"></script>
+    <p class='title'>股價變化幅度</p>
+    <span>由於大立光3008(光電業) 股價變動幅度大過於其他產業太多，導致圖表不容易分析</span>
+    <div id="rangebar"></div>
+    <script src="JS/price_range_graph.js"></script>
+    <span>排除大立光3008後的股價變化幅度</span>
+    <div id="rangebarW"></div>
+    <script src="JS/price_range_w_graph.js"></script>
+
     <!-- top button -->
     <div>
         <button onclick="topFunction()" id="topBtn" title="Go to top"><img class="topimg" src='image/top.png'></button>
