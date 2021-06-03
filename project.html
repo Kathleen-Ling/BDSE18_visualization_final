@@ -61,6 +61,10 @@
             padding: 10px;
             letter-spacing: 1.5px;
         }
+        span{
+            display:inline-block; 
+            margin:0px 0px 15px 10px;
+        }
 
 
         @media only screen and (max-width: 768px) {
@@ -146,6 +150,8 @@
             <div class="title">
                 <p id="ADXR" style="margin-bottom: 20px;">趨勢波動時序</p>
             </div>
+            <span>以數值25區分，ADXR&gt25代表市場有一定趨勢，市場趨勢動能大時，股價變化幅度也大。ADXR&lt25時，市場趨勢動能小, 代表股票正盤整中。</span>
+            <span>註:ADXR本身無方向性， 無法分辨股價漲跌</span>
             <div id=adxrName></div>
   
             <div id="sAdxrGraph"></div>
@@ -153,7 +159,7 @@
             <div class="title">
                 <p id="price" style="margin-bottom: 20px;">股價預測</p>
             </div>
-            <span style="display:inline-block; margin:0px 0px 15px 10px;">註: 使用TA-Lib選出的十大特徵預測收盤價</span>
+            <span>註: 使用TA-Lib選出的十大特徵預測收盤價</span>
             <div id=spName></div>
     
             <div id="spgraph"></div>
